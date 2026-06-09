@@ -2,15 +2,22 @@
 
 namespace App\Controllers;
 
+use App\Models\ProductModel; 
+
 class Home extends BaseController
 {
+    protected $productModel;
+
+    function __construct(){
+    $this->productModel = new ProductModel();
+    }
+
     public function index(): string
     {
-        $data =[
-            'title' => 'Beranda',
-            'content' => view('default')
-        ];
-        return view('v_home',$data);
+        $products = $this->productModel->findAll();
+        $data['products'] = $products;
+
+        return view('v_home', $data);
     }
 
     function produk()
