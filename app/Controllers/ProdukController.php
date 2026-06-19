@@ -111,7 +111,7 @@ class ProdukController extends BaseController
 
         // Download / tampilkan PDF
         $dompdf->stream($filename, [
-            'Attachment' => true
+            'Attachment' => false
         ]);
     }
 }
