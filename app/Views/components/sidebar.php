@@ -27,7 +27,13 @@
             </li><!-- End Produk Nav -->
         <?php
         }
-        ?>     
+        ?>
+        <li class="nav-item">
+            <a class="nav-link <?php echo (uri_string() == 'history') ? "" : "collapsed" ?>" href="history">
+                <i class="bi bi-person"></i>
+                <span>History</span>
+            </a>
+        </li><!-- End History Nav -->     
     </ul>
 
 </aside><!-- End Sidebar-->
